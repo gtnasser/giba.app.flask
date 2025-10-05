@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GibaTools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* garante que o conteudo nao fique escondido sob a Navbar fixa do Bootstrap */
+        /* usar com fixed-top os sticky-top ? */
+        body {
+            padding-top: 56px;
+            font-size: 0.875rem !important; /* diminui tamanho fonte padrao para 14px */
+        }
+    </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #003c79;" data-bs-theme="dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{{ url_for('home') }}" style="color: #f5c818">
+            <img src="{{ url_for('static', filename='hammer2.png') }}" height="24" alt="">
+            <span class="fw-bolder">GibaTools</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div class="navbar-nav">
+
+<!--
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            -->
+                <a class="nav-link" href="{{ url_for('dashboard') }}"><i class="bi bi-house-door me-1"></i>Dashboard</a>
+                <a class="nav-link" href="#"><i class="bi bi-file-earmark me-1"></i>Relatórios</a>
+
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        NF-e</a>
+                        <div class="dropdown-menu" style="background-color: #003c79;">
+                            <a class="dropdown-item" href="https://www.nfe.fazenda.gov.br/portal/principal.aspx" target="_new">Portal NF-e</a>
+                            <!--
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
+                            -->
+                            <a class="dropdown-item" href="https://app.sefaz.es.gov.br/ConsultaNFCe/" target="_new">Consulta NFC-e ES</a>
+                            <a class="dropdown-item" href="https://www.dfe.ms.gov.br/nfce/consulta/" target="_new">Consulta NFC-e MS</a>
+                            <a class="dropdown-item" href="https://nfce.sefaz.pe.gov.br:444/nfce/consulta" target="_new">Consulta NFC-e PE - prd</a>
+                            <a class="dropdown-item" href="https://nfehomologconsulta.sefaz.pe.gov.br:444/nfe-web/consNfe" target="_new">Consulta NFC-e PE - hml</a>
+                            <a class="dropdown-item" href="https://sped.fazenda.pr.gov.br/NFCe/webservices/sped/nfce/completa" target="_new">Consulta NFC-e PR</a>
+                            <a class="dropdown-item" href="https://www.nfce.sefin.ro.gov.br/home.jsp" target="_new">Consulta NFC-e RO - prd</a>
+                            <a class="dropdown-item" href="https://www.nfce.sefin.ro.gov.br/consultaAmbHomologacao.jsp" target="_new">Consulta NFC-e RO - hml</a>
+                            <a class="dropdown-item" href="https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaPublica.aspx" target="_new">Consulta NFC-e SP - prd</a>
+                            <a class="dropdown-item" href="https://www.homologacao.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaPublica.aspx" target="_new">Consulta NFC-e SP - hml</a>
+                        </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tools</a>
+                        <div class="dropdown-menu" style="background-color: #003c79;">
+                            <a class="dropdown-item" href="https://getbootstrap.com/docs/5.3" target="_new">Bootstrap Docs</a>
+                            <a class="dropdown-item" href="https://icons.getbootstrap.com" target="_new">Bootstrap Icons</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+
+            </div>
+
+            <div class="navbar-nav">
+                {% if current_user.is_authenticated %}
+                    <span class="navbar-text text-white"><i class="bi bi-person-circle me-1"></i>{{ current_user.id }}</span>
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('login') }}"><i class="bi bi-person-circle me-1"></i>Login</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<main>
+    <div class="container-fluid p-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category != 'danger' %}
+                        <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

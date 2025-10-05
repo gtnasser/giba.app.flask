@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<nav class="navbar fixed-bottom bg-body-tertiary">
+    <div class="container-fluid">
+
+        <div class="navbar-nav">
+            <span class="navbar-text text-small">v1.0.0 &copy; 2025
+            <a class="navbar-link" href="{{ url_for('aboutme') }}">gtnasser@gmail.com <i class="bi bi-person-raised-hand"></i></a>
+            </span>
+        </div>
+
+    </div>
+</nav>
+
+{% endblock %}

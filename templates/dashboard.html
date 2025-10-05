@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+    <div class="col">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Clientes Ativos</h5>
+                <p class="card-text fs-1">125</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Vendas Hoje</h5>
+                <p class="card-text fs-1">R$ 5.480</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Produtos em Estoque</h5>
+                <p class="card-text fs-1">450</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
