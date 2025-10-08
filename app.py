@@ -68,6 +68,11 @@ def login():
     # Se o metodo for GET, apenas exibe a pagina de login
     return render_template('login.html', error=False)
 
+# Rota about (publica)
+@app.route("/chavenfe")
+def chavenfe():
+    return render_template('chave_nfe.html')
+
 # Rota protegida
 @app.route('/dashboard')
 @login_required

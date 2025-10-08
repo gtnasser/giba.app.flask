@@ -37,7 +37,7 @@
 
 <!--
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
-            -->
+-->
                 <a class="nav-link" href="{{ url_for('dashboard') }}"><i class="bi bi-house-door me-1"></i>Dashboard</a>
                 <a class="nav-link" href="#"><i class="bi bi-file-earmark me-1"></i>Relatórios</a>
 
@@ -45,6 +45,8 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         NF-e</a>
                         <div class="dropdown-menu" style="background-color: #003c79;">
+                            <a class="dropdown-item" href="{{ url_for('chavenfe') }}"><i class="bi bi-key me-1"></i>Chaves NFe/NFCe</a>
+                            <div><hr class="dropdown-divider"></div>
                             <a class="dropdown-item" href="https://www.nfe.fazenda.gov.br/portal/principal.aspx" target="_new">Portal NF-e</a>
                             <!--
                             <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
