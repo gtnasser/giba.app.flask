@@ -1,7 +1,8 @@
 # app.py
+import os
+from datetime import timedelta
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
-from datetime import timedelta
 
 app = Flask(__name__)
 
@@ -88,5 +89,7 @@ def logout():
     return render_template('home.html')
 
 if __name__ == '__main__':
-    # Debug=True e bom para desenvolvimento. Use False em produção!
-    app.run(debug=True)
+    # identifica se esta sendo executado no ambiente Vercel
+    vercel_keys = ['VERCEL', 'VERCEL_ENV']
+    is_vercel = any(key in os.environ for key in vercel_keys)
+    app.run(debug=not is_vercel)
