@@ -1,0 +1,191 @@
+[
+    {
+        "id" : "11",
+        "UF": "RO", 
+        "nome": "Rondonia",
+        "prd": "https://www.nfce.sefin.ro.gov.br/home.jsp",
+        "hml": "https://www.nfce.sefin.ro.gov.br/consultaAmbHomologacao.jsp" 
+    },
+    {
+        "id" : "12",
+        "UF": "AC", 
+        "nome": "Acre",
+        "prd": "http://www.sefaznet.ac.gov.br/nfce/consulta.xhtml",
+        "hml": "" 
+    },
+    {
+        "id" : "13",
+        "UF": "AM", 
+        "nome": "Amazonas",
+        "prd": "https://sistemas.sefaz.am.gov.br/nfceweb/formConsulta.do ",
+        "hml": "https://sistemas.sefaz.am.gov.br/nfceweb-hom/formConsulta.do" 
+    },
+    {
+        "id" : "14",
+        "UF": "RR", 
+        "nome": "Roraima",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "15",
+        "UF": "PA", 
+        "nome": "Pará",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "16",
+        "UF": "AP", 
+        "nome": "Amapá",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "17",
+        "UF": "TO", 
+        "nome": "Tocantins",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "21",
+        "UF": "MA", 
+        "nome": "Maranhão",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "22",
+        "UF": "PI", 
+        "nome": "Piauí",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "23",
+        "UF": "CE", 
+        "nome": "Ceará",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "24",
+        "UF": "RN", 
+        "nome": "Rio Grande do Norte",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "25",
+        "UF": "PB", 
+        "nome": "Paraíba",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "26",
+        "UF": "PE", 
+        "nome": "Pernambuco",
+        "prd": "https://www.sefaz.pe.gov.br/Servicos/Nota-Fiscal-de-Consumidor-Eletronica/Paginas/Consultas-Producao.aspx",
+        "hml": "https://www.sefaz.pe.gov.br/Servicos/Nota-Fiscal-de-Consumidor-Eletronica/Paginas/Consultas-Ambiente-de-Homologacao-(Sem-valor-fiscal).aspx" 
+    },
+    {
+        "id" : "27",
+        "UF": "AL", 
+        "nome": "Alagoas",
+        "prd": "https://nfce.sefaz.al.gov.br/consultaNFCe.htm",
+        "hml": "https://nfce.sefaz.al.gov.br/consultaNFCeHomolog.htm" 
+    },
+    {
+        "id" : "28",
+        "UF": "SE", 
+        "nome": "Sergipe",
+        "prd": "https://nfce.sefaz.se.gov.br/portal/portalNoticias.jsp",
+        "hml": "https://nfce.sandbox.sefaz.se.gov.br/portal/portalNoticias.jsp" 
+    },
+    {
+        "id" : "29",
+        "UF": "BA", 
+        "nome": "Bahia",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "31",
+        "UF": "MG", 
+        "nome": "Minas Gerais",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "32",
+        "UF": "ES", 
+        "nome": "Espírito Santo",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "33",
+        "UF": "RJ", 
+        "nome": "Rio de Janeiro",
+        "prd": "https://consultadfe.fazenda.rj.gov.br/consultaDFe/paginas/consultaChaveAcesso.faces",
+        "hml": "" 
+    },
+    {
+        "id" : "35",
+        "UF": "SP", 
+        "nome": "São Paulo",
+        "prd": "https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaPublica.aspx",
+        "hml": "https://www.homologacao.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaPublica.aspx" 
+    },
+    {
+        "id" : "41",
+        "UF": "PR", 
+        "nome": "Parana",
+        "prd": "https://sped.fazenda.pr.gov.br/NFCe/webservices/sped/nfce/completa",
+        "hml": "" 
+    },
+    {
+        "id" : "42",
+        "UF": "SC", 
+        "nome": "Santa Catarina",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "43",
+        "UF": "RS", 
+        "nome": "Rio Grande do Sul",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "50",
+        "UF": "MS", 
+        "nome": "Mato Grosso do Sul",
+        "prd": "https://www.dfe.ms.gov.br/nfce/consulta/",
+        "hml": "" 
+    },
+    {
+        "id" : "51",
+        "UF": "MT", 
+        "nome": "Mato Grosso",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "52",
+        "UF": "GO", 
+        "nome": "Goiás",
+        "prd": "",
+        "hml": "" 
+    },
+    {
+        "id" : "53",
+        "UF": "DF", 
+        "nome": "Distrito Federal",
+        "prd": "",
+        "hml": "" 
+    }
+]                                

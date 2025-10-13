@@ -1,5 +1,5 @@
 # app.py
-import os
+import os, json
 from datetime import timedelta
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
@@ -69,10 +69,19 @@ def login():
     # Se o metodo for GET, apenas exibe a pagina de login
     return render_template('login.html', error=False)
 
-# Rota about (publica)
+# Rota chavenfce (publica)
 @app.route("/chavenfe")
 def chavenfe():
     return render_template('chave_nfe.html')
+
+# Rota consulta nfe (publica)
+@app.route("/consultanfe")
+def consultanfe():
+  
+    # carrega lista de consultas
+    with open(os.path.join(app.static_folder, 'consultanfe.json'), 'r', encoding='utf-8') as f:
+        lista_nfe = json.load(f)
+    return render_template('consulta_nfe.html', nfes=lista_nfe)
 
 # Rota protegida
 @app.route('/dashboard')

@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+
+{% block title %}Consulta NF-e{% endblock %}
+
+{% block content %}
+
+<style>
+    .card.mini {
+        width: 100px;
+        height: 120px;
+    }
+
+    .card.mini span {
+        display: block;
+        height: 20px;
+    }
+
+</style>
+
+
+<section>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">Consulta NF-e</div>
+                <div class="card-body d-flex flex-wrap gap-2">
+
+                    {% for nfe in nfes %}
+                        <div class="card mini">
+                            <div class="card-header text-center">{{ nfe.id }} - {{ nfe.UF }}</div>
+                            <div class="card-body p-1 text-center">
+                                <span class="text-center align-middle">{{ nfe.nome }}</span><br>
+                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                {% if nfe.hml %} 
+                                    <a href="{{ nfe.prd }}" target="_blank" class="btn btn-sm btn-outline-primary">PRD</a>
+                                    <a href="{{ nfe.hml }}" target="_blank" class="btn btn-sm btn-outline-primary">HML</a>
+                                {% else %} 
+                                {% if nfe.prd %} 
+                                        <a href="{{ nfe.prd }}" target="_blank" class="btn btn-sm btn-outline-primary">Prd+Hml</a>
+                                {% endif %}
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
