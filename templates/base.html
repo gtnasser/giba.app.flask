@@ -14,6 +14,26 @@
             padding-top: 56px;
             font-size: 0.875rem !important; /* diminui tamanho fonte padrao para 14px */
         }
+
+        /* navegacao menu */
+        .navbar-brand,
+        .navbar-nav .logged-in {
+            color: #f5c818!important;
+        }
+        .navbar-nav .nav-link,
+        .navbar-nav a.dropdown-item {
+            color: #ffffffaa;
+        }
+        .nav-link.disabled {
+            color: #ffffff8c!important;
+        }
+        .nav-link:hover,
+        .dropdown-item:hover {
+            background-color: #ffffff8c;
+            border-radius: 10px;
+        }
+        
+
     </style>
 
 </head>
@@ -23,7 +43,7 @@
 <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #003c79;" data-bs-theme="dark">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="{{ url_for('home') }}" style="color: #f5c818">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
             <img src="{{ url_for('static', filename='hammer2.png') }}" height="24" alt="">
             <span class="fw-bolder">GibaTools</span></a>
 
@@ -49,13 +69,6 @@
                             <div><hr class="dropdown-divider"></div>
                             <a class="dropdown-item" href="https://www.nfe.fazenda.gov.br/portal/principal.aspx" target="_new">Portal NF-e</a>
                             <!--
-                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
-                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
-                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
-                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
-                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
-                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
-                            <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
                             <a class="dropdown-item" href="" target="_new">Consulta NFC-e xx</a>
                             -->
                             <a class="dropdown-item" href="https://app.sefaz.es.gov.br/ConsultaNFCe/" target="_new">Consulta NFC-e ES</a>
@@ -86,8 +99,8 @@
 
             <div class="navbar-nav">
                 {% if current_user.is_authenticated %}
-                    <span class="navbar-text text-white"><i class="bi bi-person-circle me-1"></i>{{ current_user.id }}</span>
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    <span class="navbar-text text-white logged-in"><i class="bi bi-person-circle me-1"></i>{{ current_user.id }}</span>
+                    <a class="nav-link" href="{{ url_for('logout') }}"><i class="bi bi-x-circle me-1"></i>Logout</a>
 
                 {% else %}
                     <a class="nav-link" href="{{ url_for('login') }}"><i class="bi bi-person-circle me-1"></i>Login</a>
