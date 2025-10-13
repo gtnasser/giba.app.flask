@@ -26,7 +26,9 @@
 <div class="login-container">
     <div class="card shadow-lg">
         <div class="card-body p-4">
-            <h2 class="card-title text-center mb-4">GibaTools</h2>
+            <h2 class="card-title text-center mb-4">
+                GibaTools
+            </h2>
 
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
@@ -56,6 +58,7 @@
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary">Entrar</button>
                 </div>
+                <input type="hidden" name="next" value="{{next_page or '/'}}">
             </form>
 
             <div class="d-flex justify-content-center mt-3 small text-muted">

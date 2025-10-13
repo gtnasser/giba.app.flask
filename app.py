@@ -19,6 +19,8 @@ login_manager.login_view = "login"  # rota para onde redirecionar se não autent
 login_manager.login_message = "Voce precisa se autenticar para acessar esta página"
 login_manager.login_message_category = "warning"
 
+# ---
+
 # Usuarios de exemplo (TODO: aqui simulando um banco de dados)
 users = {"admin": {"password": "123"},"demo": {"password": "demo"}}
 
@@ -30,6 +32,19 @@ class User(UserMixin):
 @login_manager.user_loader
 def load_user(user_id):
     return User(user_id) if user_id in users else None
+
+# ---
+
+# se requer autenticacao, envia pagina da requisicao original para a tela de login
+def login_required(f):
+    from functools import wraps
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not current_user.is_authenticated:
+            # passa URL original como parâmetro
+            return redirect(url_for('login', next=request.path))
+        return f(*args, **kwargs)
+    return decorated_function
 
 # Rota inicial (publica)
 @app.route("/")
@@ -60,14 +75,14 @@ def login():
             else:
                 session.permanent = False
             flash("Login realizado com sucesso!", "success")
-            next_page = request.args.get("next")  # volta para a pagina que tentou acessar
-            return redirect(next_page or url_for("home"))
+            return redirect(request.form.get('next') or url_for('home'))
         else:
             flash('Usuário ou senha inválidos.', 'danger')
             return render_template('login.html', error=True)
 
     # Se o metodo for GET, apenas exibe a pagina de login
-    return render_template('login.html', error=False)
+    next_page = request.args.get("next")  # captura qual pagina que tentou acessar
+    return render_template('login.html', error=False, next_page=next_page)
 
 # Rota chavenfce (publica)
 @app.route("/chavenfe")
